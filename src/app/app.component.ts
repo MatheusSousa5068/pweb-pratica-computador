@@ -9,13 +9,14 @@ import { Computador } from './shared/models/computador';
 export class AppComponent {
   title = 'pweb-computador';
   computadores: Computador[] = [];
-  computadorTratamento: Computador;
+  computadorTratamento: Computador = new Computador('', '', '', '', 0);
   computadoresPesquisa: Computador[] = [];
 
   mensagemErro = '';
 
   constructor() {
-    this.computadorTratamento = new Computador('', '', '', '', 0);
+    // Remova esta linha para evitar a inicialização desnecessária
+    // this.computadorTratamento = new Computador('', '', '', '', 0);
   }
 
   cadastrar(): void {
@@ -52,5 +53,24 @@ export class AppComponent {
     this.computadoresPesquisa = this.computadores.filter((computador) =>
       computador.numeroSerie.includes(pedacoNumeroSerie)
     );
+  }
+
+  // Adicionando lógica para atualizar
+  selecionarParaAtualizar(computador: Computador): void {
+    this.computadorTratamento = Object.assign({}, computador);
+  }
+
+  atualizar(): void {
+    const indiceAtualizar = this.computadores.findIndex(
+      (comp) => comp.numeroSerie === this.computadorTratamento.numeroSerie
+    );
+
+    if (indiceAtualizar >= 0) {
+      this.computadores[indiceAtualizar] = Object.assign({}, this.computadorTratamento);
+      this.computadorTratamento = new Computador('', '', '', '', 0);
+      this.mensagemErro = '';
+    } else {
+      this.mensagemErro = 'Computador não encontrado para atualização.';
+    }
   }
 }
