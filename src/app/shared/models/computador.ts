@@ -1,10 +1,19 @@
 export class Computador {
   constructor(
+    private _numeroSerie: string,
     private _marca: string,
     private _modelo: string,
     private _processador: string,
     private _ram: number
   ) {}
+
+  get numeroSerie(): string {
+    return this._numeroSerie;
+  }
+
+  set numeroSerie(novoNumeroSerie: string) {
+    this._numeroSerie = novoNumeroSerie;
+  }
 
   get marca(): string {
     return this._marca;
