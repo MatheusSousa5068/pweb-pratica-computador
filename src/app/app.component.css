@@ -1,0 +1,70 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #673ab7;
+}
+
+label {
+  color: black;
+  padding: 8px;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+mat-form-field {
+  margin-bottom: 15px;
+}
+
+button {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.mensagem-erro {
+  color: #d32f2f;
+  margin-top: 10px;
+}
+
+.example-card {
+  width: 300px;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.example-card:hover {
+  transform: scale(1.05);
+}
+
+mat-card-content {
+  padding: 16px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+  color: #673ab7;
+}

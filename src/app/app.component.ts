@@ -15,7 +15,6 @@ export class AppComponent {
   mensagemErro = '';
 
   constructor() {
-    // Remova esta linha para evitar a inicialização desnecessária
     // this.computadorTratamento = new Computador('', '', '', '', 0);
   }
 
@@ -55,18 +54,19 @@ export class AppComponent {
     );
   }
 
-  // Adicionando lógica para atualizar
   selecionarParaAtualizar(computador: Computador): void {
-    this.computadorTratamento = Object.assign({}, computador);
+    this.computadorTratamento = computador;
   }
 
   atualizar(): void {
+    console.log('hm');
     const indiceAtualizar = this.computadores.findIndex(
       (comp) => comp.numeroSerie === this.computadorTratamento.numeroSerie
     );
 
+
     if (indiceAtualizar >= 0) {
-      this.computadores[indiceAtualizar] = Object.assign({}, this.computadorTratamento);
+      this.computadores[indiceAtualizar] = this.computadorTratamento;
       this.computadorTratamento = new Computador('', '', '', '', 0);
       this.mensagemErro = '';
     } else {
