@@ -15,7 +15,7 @@ export class AppComponent {
   mensagemErro = '';
 
   constructor() {
-    // this.computadorTratamento = new Computador('', '', '', '', 0);
+    
   }
 
   cadastrar(): void {
